@@ -20,6 +20,30 @@ x = x(:)   ;
 % --------------------------------------
 % insert here your function:
 
+global opt_inputs;
+data = opt_inputs.data;
+h_init = opt_inputs.h_init;
+param = opt_inputs.param;
+h_bar = opt_inputs.h_bar;
+w = param.reg.w;
+
+param.reg.h1 = x(1);
+param.reg.h2 = x(2);
+param.reg.m1 = x(3);
+param.reg.m2 = x(4);
+
+[r_reg, s_reg, h_reg] = simRegLake(h_init, data, param);
+
+J1 = getVulnerability2(r_reg,param.reg.w,2);
+
+params2.p3 = 0.081;
+params2.p2 = -0.483;
+params2.p1 = 1.506;
+params2.p0 = -1.578;
+S = getFlooding2(h_reg, h_bar, params2);
+J2 = mean(S);
+
+f = [J1, J2];
 
 
 % --------------------------------------
