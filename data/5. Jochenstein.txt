@@ -1,0 +1,3 @@
+Jochenstein
+[WGS84]	lat = 48.520240	lon = 13.704660
+[km^2]	Area = 76984.120000
