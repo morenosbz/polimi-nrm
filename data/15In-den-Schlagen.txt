@@ -1,0 +1,3 @@
+In-den-Schlagen
+[WGS84]	lat = 8.779718	lon = 156.534000
+[km^2]	Area = 1.000000
